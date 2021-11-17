@@ -1,0 +1,349 @@
+@import "colors";
+@import "fonts";
+@import "animations";
+
+.parallax-container {
+  height: 400px;
+}
+
+@mixin mainButton() {
+  text-transform: uppercase;
+  color: $snow;
+  padding: 20px;
+  border: 1px solid $snow;
+  text-decoration: none;
+}
+
+/* text size adjust */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+/* box model */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: $secondaryFont;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: $snow;
+  background-color: $lightGrey;
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav-wrapper {
+  background-color: $darkBlue;
+}
+
+.sidenav {
+  li {
+    a {
+      color: $darkBlue;
+      font-size: 1.5em;
+    }
+  }
+}
+
+.dropdown-content {
+  width: 400px !important;
+  background-color: $snow;
+  height: 60vh;
+
+  li {
+    padding-left: 20px;
+    a {
+      color: $darkBlue;
+      font-size: 2em;
+    }
+  }
+}
+
+.hero {
+  height: 95vh;
+  background-image: linear-gradient(
+      to left bottom,
+      rgba(211, 211, 211, 0.8),
+      rgba(115, 147, 179, 0.8),
+      rgba(28, 79, 156, 0.8),
+      rgba(25, 71, 140, 0.8)
+    ),
+    url(../assets/images/milledgevilleOverlook.jpeg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  -webkit-clip-path: polygon(100% 0, 100% 87%, 0 100%, 0 0);
+  clip-path: polygon(100% 0, 100% 87%, 0 100%, 0 0);
+  display: flex;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+  h1,
+  h3 {
+    line-height: 1;
+  }
+  h1 {
+    text-transform: uppercase;
+    font-size: 2.85em;
+    margin-bottom: 0;
+    font-family: $mainFont;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+  h3 {
+    margin-bottom: 40px;
+    font-size: 1.5em;
+    font-family: $accentFont;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+}
+
+.button {
+  @include mainButton();
+  &:hover,
+  :active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+  animation-name: moveInBottom;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.about {
+  color: $darkest;
+  h2 {
+    font-size: 3em;
+    font-family: $accentFont;
+    line-height: 1.25;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+    margin-bottom: 0;
+  }
+  p {
+    font-size: 1.25em;
+    text-indent: 25px;
+  }
+}
+
+.divider {
+  margin: 30px;
+  background-color: $blueGrey;
+}
+
+.carousel {
+  margin-top: 30px;
+}
+
+.location {
+  color: $darkest;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  h2 {
+    font-size: 3em;
+    font-family: $accentFont;
+    line-height: 1.25;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+    margin-bottom: 0;
+  }
+
+  a {
+    color: $darkest;
+  }
+  h4 {
+    font-size: 1.25em;
+    line-height: 1.25;
+  }
+}
+
+.map {
+  margin-top: 40px;
+}
+
+.contact {
+  color: $darkBlue;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+  h2 {
+    font-family: $mainFont;
+    font-size: 3.5em;
+    color: $darkest;
+  }
+  h3 {
+    font-size: 2em;
+    font-family: $accentFont;
+  }
+  p {
+    text-indent: 25px;
+    color: $darkest;
+    font-size: 1.25em;
+  }
+  i {
+    color: $darkBlue;
+  }
+  .btn {
+    background-color: $darkerBlue;
+  }
+}
+
+.instagram {
+  color: $darkerBlue;
+  h2 {
+    font-family: $accentFont;
+    font-size: 2.5em;
+  }
+}
+
+.faqs {
+  margin-bottom: 30px;
+  h2 {
+    /*font-family: $accentFont;*/
+    color: $darkBlue;
+  }
+
+  .collapsible-header {
+    background-color: $palest;
+    color: $darkBlue;
+  }
+  .collapsible-body {
+    color: $darkest;
+  }
+
+  a {
+    color: $darkBlue;
+  }
+}
+
+.page-footer {
+  margin-top: auto;
+  background-color: $darkBlue;
+}
+
+/*thank-you page*/
+.thank-you {
+  background-color: $darkBlue;
+  align-items: center;
+  text-align: center;
+  margin: 250px 10px;
+  padding: 10px;
+  font-family: $secondaryFont;
+  border-radius: 5px;
+  color: $darkest;
+  h1 {
+    font-size: 3em;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
+  a {
+    font-family: $accentFont;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .center-content {
+    h1 {
+      font-size: 3.45em;
+    }
+    h3 {
+      font-size: 2.5em;
+    }
+  }
+
+  .button {
+    font-size: 1.5em;
+  }
+
+  .about {
+    .section-heading {
+      margin-top: 100px;
+    }
+    h2 {
+      padding-top: 40px;
+      font-size: 3em;
+    }
+    p {
+      margin: 0 50px;
+      font-size: 1.5em;
+   
+    }
+    .padding-bottom {
+      padding-bottom: 100px;
+    }
+  }
+
+
+  .location {
+    flex-direction: row;
+    height: auto;
+    h2 {
+      font-size: 2em;
+    }
+    h4 {
+      font-size: 1.25em;
+    }
+  }
+
+} /* medium screen */
+
+@media only screen and (min-width: 900px) {
+
+  .center-content {
+    h1 {
+      font-size: 4.5em;
+    }
+    h3 {
+      font-size: 4em;
+    }
+  }
+
+  .button {
+    font-size: 2em;
+  }
+
+  .about {
+    h2 {
+      font-size: 4em;
+    }
+    p {
+      margin: 10px 100px;
+      font-size: 2em;
+    }
+    .padding-bottom {
+      padding-bottom: 150px;
+    }
+  }
+
+  .location {
+ height: auto;
+ margin: 0 30px;
+    h2 {
+      font-size: 2.75em;
+    }
+    
+    h4 {
+      font-size: 1.5em;
+    }
+  }
+
+
+  
+} /* large screen */
+
